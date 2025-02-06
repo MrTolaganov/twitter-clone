@@ -105,7 +105,7 @@ export default function Actions() {
             <Button
               size={'lg'}
               variant={'outline'}
-              className='h-12 rounded-full text-blue-500 text-lg border border-gray-500 font-semibold bg-secondary'
+              className='h-12 rounded-full text-blue-500 text-lg border border-blue-500 font-semibold'
             >
               {t('signIn')}
             </Button>

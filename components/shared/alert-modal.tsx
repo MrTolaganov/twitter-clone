@@ -35,22 +35,36 @@ export default function AlertModal() {
   }
 
   return (
-    <DialogRoot role='alertdialog' placement={'center'} open={openedAlert} onOpenChange={() => setOpenedAlert(false)}>
+    <DialogRoot
+      role='alertdialog'
+      placement={'center'}
+      open={openedAlert}
+      onOpenChange={() => setOpenedAlert(false)}
+    >
       <DialogContent>
         <DialogHeader>
-          <DialogTitle className='text-center font-semibold text-lg'>{t('alertDialogTitle')}</DialogTitle>
+          <DialogTitle className='text-center font-semibold text-lg'>
+            {t('alertDialogTitle')}
+          </DialogTitle>
         </DialogHeader>
         <DialogBody>
           <DialogDescription>{t('alertDialogDescription')}</DialogDescription>
         </DialogBody>
         <DialogFooter>
           <DialogActionTrigger asChild>
-            <Button variant={'outline'} className='border border-primary font-semibold px-2' onClick={() => setOpenedAlert(false)}>
+            <Button
+              variant={'outline'}
+              className='border border-primary font-semibold px-2'
+              onClick={() => setOpenedAlert(false)}
+            >
               {t('cancel')}
             </Button>
           </DialogActionTrigger>
           <DialogActionTrigger asChild>
-            <Button className='bg-red-500 hover:bg-red-500 text-white px-2 font-semibold' onClick={onDelete}>
+            <Button
+              className='bg-destructive hover:bg-destructive text-white px-2 font-semibold'
+              onClick={onDelete}
+            >
               {t('continue')}
             </Button>
           </DialogActionTrigger>

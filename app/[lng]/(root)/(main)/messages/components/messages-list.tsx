@@ -125,7 +125,7 @@ export default function MessagesList() {
                     variant={'outline'}
                     disabled={isLoading}
                     onClick={() => onDelete(_id)}
-                    className='text-red-500 border border-red-500'
+                    className='text-destructive border border-destructive'
                   >
                     <Trash2 />
                   </Button>
@@ -136,7 +136,7 @@ export default function MessagesList() {
           {allContacts.length > 0 ? (
             <Button
               variant={'outline'}
-              className='mx-auto text-red-500 border border-red-500 px-2 font-semibold'
+              className='mx-auto text-destructive border border-destructive px-2 font-semibold'
               disabled={isLoading}
               onClick={onClear}
             >

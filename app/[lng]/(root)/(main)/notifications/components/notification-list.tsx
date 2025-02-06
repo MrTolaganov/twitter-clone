@@ -91,7 +91,7 @@ export default function NotificationList() {
             )}
           </div>
           {notifications.length > 0 ? (
-            <Button className='bg-red-500' disabled={isLoading} onClick={onClearNotifications}>
+            <Button className='bg-destructive' disabled={isLoading} onClick={onClearNotifications}>
               {t('clearAll')}
             </Button>
           ) : (
