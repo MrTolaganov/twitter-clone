@@ -62,7 +62,7 @@ export default function AlertModal() {
           </DialogActionTrigger>
           <DialogActionTrigger asChild>
             <Button
-              className='bg-destructive hover:bg-destructive text-white px-2 font-semibold'
+              className='bg-red-500 hover:bg-red-500 text-white px-2 font-semibold'
               onClick={onDelete}
             >
               {t('continue')}

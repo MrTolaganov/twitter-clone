@@ -114,7 +114,7 @@ export default function PostCard({ post, detailed }: Props) {
           <div className={`${detailed ? 'hidden' : 'flex items-center gap-x-8 text-sm'}`}>
             <div className='flex items-center gap-x-2 cursor-pointer'>
               <Heart
-                className={`size-5 text-destructive ${postData.liked && 'fill-destructive'}`}
+                className={`size-5 text-red-500 ${postData.liked && 'fill-red-500'}`}
                 onClick={onLikeAndUnLike}
               />
               <span
@@ -143,14 +143,14 @@ export default function PostCard({ post, detailed }: Props) {
                 <span className='flex-1'>{t('editPost')}</span>
               </Link>
               <div
-                className='cursor-pointer flex items-center gap-x-2 hover:text-destructive'
+                className='cursor-pointer flex items-center gap-x-2 hover:text-red-500'
                 onClick={() => {
                   setOpenedAlert(true)
                   setPostId(_id)
                 }}
               >
-                <Trash2 className='size-4 text-destructive 0' />
-                <span className='text-destructive flex-1 0'>{t('deletePost')}</span>
+                <Trash2 className='size-4 text-red-500 0' />
+                <span className='text-red-500 flex-1 0'>{t('deletePost')}</span>
               </div>
             </div>
           )}

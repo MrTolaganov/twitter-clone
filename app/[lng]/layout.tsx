@@ -9,6 +9,7 @@ import NextTopLoader from 'nextjs-toploader'
 import SessionProvider from '@/components/providers/session.provider'
 import './global.css'
 import ChakraProvider from '@/components/providers/chakra.provider'
+import QueryProvider from '@/components/providers/query.provider'
 
 const montserrat = Montserrat({
   weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
@@ -49,23 +50,27 @@ export default async function RootLayout({ params, children }: LayoutProps) {
       <body
         className={`${montserrat.variable} overflow-x-hidden font-montserrat overflow-y-scroll custom-scrollbar`}
       >
-        <SessionProvider>
-          <NextTopLoader
-            color='#3182CE'
-            initialPosition={0.5}
-            crawlSpeed={200}
-            height={2}
-            crawl={true}
-            showSpinner={false}
-            easing='ease'
-            speed={200}
-            shadow='0 0 10px #3182CE,0 0 5px #3182CE'
-          />
-          <ChakraProvider>
-            <Provider>{children}</Provider>
-            <Toaster />
-          </ChakraProvider>
-        </SessionProvider>
+        <QueryProvider>
+          <SessionProvider>
+            <NextTopLoader
+              color='#3182CE'
+              initialPosition={0.5}
+              crawlSpeed={200}
+              height={2}
+              crawl={true}
+              showSpinner={false}
+              easing='ease'
+              speed={200}
+              shadow='0 0 10px #3182CE,0 0 5px #3182CE'
+            />
+            <ChakraProvider>
+              <Provider>
+                {children}
+                <Toaster />
+              </Provider>
+            </ChakraProvider>
+          </SessionProvider>
+        </QueryProvider>
       </body>
     </html>
   )

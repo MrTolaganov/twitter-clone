@@ -76,7 +76,7 @@ export default function About({ numFollowings, numFollowers }: Props) {
         </div>
         <Button
           variant={'outline'}
-          className='flex items-center gap-x-2 border border-destructive text-destructive hover:text-destructive px-2'
+          className='flex items-center gap-x-2 border border-red-500 text-red-500 hover:text-red-500 px-2'
           onClick={() => signOut({ callbackUrl: `/${lng}/auth` })}
         >
           <LogOut />
